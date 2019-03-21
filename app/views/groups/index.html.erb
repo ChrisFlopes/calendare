@@ -1,0 +1,16 @@
+<h1>Groups#index</h1>
+<p>Find me in app/views/groups/index.html.erb</p>
+
+<% @groups.each do |group| %>
+  <%= link_to group_path(group) do %>
+    <div class="group-div">
+      <h2><%= group.name %></h2>
+      <h4>People in this group: </h4>
+      <% group.participants.each do |person| %>
+        <p><%= person.user.first_name %> <%= person.user.last_name %></p>
+      <% end %>
+    </div>
+  <% end %>
+<% end %>
+
+<%= link_to 'Create Group', new_group_path%>

@@ -1,0 +1,15 @@
+<h1>Groups#show</h1>
+<p>Find me in app/views/groups/show.html.erb</p>
+
+<%= @group.name %>
+<p>with
+  <% @group.participants.each do |part|%>
+    <%= part.user.first_name %>
+    <%= part.user.last_name %>
+    <% if part == @group.participants.last %>
+      <%= "." %>
+    <% else %>
+      <%= "," %>
+    <% end %>
+  <% end %>
+</p>
